@@ -1,0 +1,24 @@
+.categories
+    &__items
+        display: grid
+        grid-template: repeat(2, minmax(270px, auto))/ repeat(3, 270px)
+        grid-auto-rows: minmax(270px, auto)
+        grid-column-gap: 70px
+        grid-row-gap: 30px
+        justify-content: center
+        padding-top: 30px
+    &__item
+        padding-top: 20px
+        border: 2px solid $main-color
+        display: grid
+        grid-template: repeat(2, auto)/ 260
+        justify-content: center
+        img
+            height: 120px
+            fill: $main-color
+    &__item-text
+        text-align: center
+        font-size: 25px
+        line-height: 20px
+        font-weight: 700
+        color: $main-color
