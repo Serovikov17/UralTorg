@@ -1,0 +1,41 @@
+.footer
+    background-color: $secondary-color
+    min-height: 150px
+    &__info
+        display: grid
+        grid-template: minmax(20px, auto)/ 250px 350px 200px
+        grid-auto-rows: minmax(20px, auto)
+        justify-content: space-between
+        padding: 30px 0 30px 0
+        a
+            color: #fff
+    &__social 
+        display: flex
+        justify-content: center
+        align-items: center
+    &__social-item
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 25px
+        height: 25px
+        margin: 0 15px
+        img
+            height: 27px
+        &:hover
+            padding-bottom: 10px
+            border-bottom: 2px solid #ffffff 
+            transition: 0.1s all
+    &__references
+        display: flex
+        justify-content: space-between
+        align-items: center
+        
+    &__contacts
+        text-align: right
+        display: flex
+        flex-direction: column
+        a
+            margin-top: 5px
+
+        
