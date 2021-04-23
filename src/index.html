@@ -26,15 +26,14 @@
         </div>
     </div>
 
-    <section class="promo" id="promo">
+    <!-- <section class="promo" id="promo">
         <div class="container">
             <div class="promo__wrapper">
                 <div class="promo__logo">
-                    <!-- <img src="icons/logo.png" alt="logo"> -->
-                    Урал Торг Лого
+                    <a href="#" class="logo">Урал Торг Лого</a>
                 </div>
                 <div class="promo__contacts">
-                    <a href="tel:+74999228974" class="header__phone">+7 (499) 922-89-74</a>
+                    <a href="tel:+74999228974" class="phone">+7 (499) 922-89-74</a>
                 </div> 
             </div>
             
@@ -43,67 +42,122 @@
 
     <section class="categories" id="categories">
         <div class="container">
-                <div class="divider"></div>
+            <div class="divider"></div>
 
-                <!-- <div class="categories__items">
-                    <a href="" class="categories__item">
-                        <img src="icons/categories/leg.svg" alt="passenger car">
-                        <div class="categories__item-text">
-                            Легковые
-                        </div>
-                    </a>
-                    <a href="" class="categories__item">
-                        <img src="icons/categories/leg.svg" alt="passenger car">
-                        <div class="categories__item-text">
-                            Легковые
-                        </div>
-                    </a>
-                    <a href="" class="categories__item">
-                        <img src="icons/categories/leg.svg" alt="passenger car">
-                        <div class="categories__item-text">
-                            Легковые
-                        </div>
-                    </a>
-                    <a href="" class="categories__item">
-                        <img src="icons/categories/leg.svg" alt="passenger car">
-                        <div class="categories__item-text">
-                            Легковые
-                        </div>
-                    </a>
-                    <a href="" class="categories__item">
-                        <img src="icons/categories/leg.svg" alt="passenger car">
-                        <div class="categories__item-text">
-                            Легковые
-                        </div>
-                    </a>
-                    <a href="" class="categories__item">
-                        <img src="icons/categories/leg.svg" alt="passenger car">
-                        <div class="categories__item-text">
-                            Легковые
-                        </div>
-                    </a>
-                </div> -->
+            <div class="categories__items active">
+                <div class="categories__item" id="passenger">
+                    <img src="icons/categories/leg.svg" alt="passenger car">
+                    <div class="categories__item-text">
+                        Легковые
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <img src="icons/categories/leg.svg" alt="passenger car">
+                    <div class="categories__item-text">
+                        Легковые
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <img src="icons/categories/leg.svg" alt="passenger car">
+                    <div class="categories__item-text">
+                        Легковые
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <img src="icons/categories/leg.svg" alt="passenger car">
+                    <div class="categories__item-text">
+                        Легковые
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <img src="icons/categories/leg.svg" alt="passenger car">
+                    <div class="categories__item-text">
+                        Легковые
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <img src="icons/categories/leg.svg" alt="passenger car">
+                    <div class="categories__item-text">
+                        Легковые
+                    </div>
+                </div>
+            </div>
             
-                <div class="categories__items-choice">
-                    <a href="" class="categories__item">
-                        <img src="icons/categories/tires.svg" alt="passenger car">
-                        <div class="categories__item-text">
-                            Шины
-                        </div>
-                    </a>
-                    <a href="" class="categories__item">
-                        <img src="icons/categories/disks.svg" alt="passenger car">
-                        <div class="categories__item-text">
-                            Диски
-                        </div>
-                    </a>
+            <div class="categories__items-choice">
+                <div class="categories__item">
+                    <img src="icons/categories/tires.svg" alt="passenger car">
+                    <div class="categories__item-text">
+                        Шины
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <img src="icons/categories/disks.svg" alt="passenger car">
+                    <div class="categories__item-text">
+                        Диски
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div> 
+        </div>
+    </section> -->
+
+    <section class="catalog">
+        <div class="container">
+            <div class="catalog__wrapper">
+                <div class="catalog__info horizonal">
+                    <div href="#" class="catalog__logo">
+                        <a href="#" class="logo">Урал Торг Лого</a>
+                    </div>
+                    <div class="catalog__contacts">
+                        <a href="tel:+74999228974" class="phone">+7 (499) 922-89-74</a>
+                    </div> 
                 </div>
 
-                <div class="divider"></div> 
+                <div class="catalog__filter">
+                    <ul class="catalog__tabs">
+                        <li class="catalog__tab catalog__tab_active tireDisk"><div>Шины</div></li>
+                        <!-- <li class="catalog__tab tireDisk"><div>Диски</div></li> -->
+                        <li class="catalog__tab "><div>По автомобилю</div></li>
+                    </ul>
+
+                    <div class="catalog__parameters">
+                        <div class="catalog__parameters-sizes">
+                            <label for="width">Ширина</label>
+                            <select name="width"> <!--Supplement an id here instead of using 'name'-->
+                                <option value="value0" selected></option>
+                                <option value="value1">Все</option>
+                                <option value="value2" >6.50</option>
+                                <option value="value3">7</option>
+                            </select>
+                            <label for="profile">Профиль</label>
+                            <select name="profile"> <!--Supplement an id here instead of using 'name'-->
+                                <option value="value0"></option>
+                                <option value="value1" selected>Все</option>
+                                <option value="value2" >65</option>
+                                <option value="value3">75</option>
+                            </select>
+                            <label for="diameter">Диаметр</label>
+                            <select name="diameter"> <!--Supplement an id here instead of using 'name'-->
+                                <option value="value0"></option>
+                                <option value="value1">Все</option>
+                                <option value="value2" selected>15</option>
+                                <option value="value3">16</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="catalog__items">
+dfgdf
+                </div>
+            </div>
             
         </div>
     </section>
-
+    
     <section class="footer" id="footer">
         <div class="container">
             <div class="footer__info">
