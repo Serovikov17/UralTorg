@@ -9,16 +9,16 @@
             grid-auto-rows: minmax(270px, auto)
             grid-column-gap: 70px
             grid-row-gap: 30px
-            justify-content: center
-            
+            justify-content: center    
     &__item
-        padding-top: 20px
+        padding-top: 25px
         border: 2px solid $main-color
         display: grid
-        grid-template: repeat(2, auto)/ 260
+        grid-template: 170px 50px/ 200px
         justify-content: center
         img
-            height: 120px
+            margin: 0 auto
+            height: 150px
             fill: $main-color
     &__item-text
         text-align: center
@@ -26,10 +26,9 @@
         line-height: 20px
         font-weight: 700
         color: $main-color
-    
-    //categories__items-choice
-    &__items-choice
-        display: none
+        
+    &__item-passenger, &__item-cargo, &__item-special, &__item-agricultural, &__item-moto
+        display: none 
         &.active
             display: grid
             grid-template: 270px/ repeat(2, 270px)
@@ -39,5 +38,6 @@
             justify-content: center
     .divider_choice    
         width: 660px
+    
     
     
