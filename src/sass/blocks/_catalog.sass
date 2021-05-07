@@ -47,6 +47,8 @@
             
     .tireDisk
         width: 30%
+        &__forestTire
+            width: 100%
 
     &__parameters
         padding: 10px
@@ -54,7 +56,7 @@
         border-top: none
         min-height: 650px
     &__parameters-tire
-        &_passenger-notActive, &_cargo-notActive  
+        &_passenger-notActive, &_cargo-notActive, &_special-notActive, &_agricultural-notActive, &_moto-notActive, &_forestTire-notActive
             display: none
         &_sizes
             display: grid
@@ -83,7 +85,7 @@
         
 
     &__parameters-disk
-        &_passenger-notActive, &_cargo-notActive  
+        &_passenger-notActive, &_cargo-notActive, &_special-notActive, &_agricultural-notActive, &_moto-notActive  
             display: none
         &_sizes
             display: grid
@@ -104,7 +106,7 @@
         width: 120px
         label
             margin-bottom: 0
-        &_passenger-notActive, &_cargo-notActive  
+        &_passenger-notActive, &_cargo-notActive, &_special-notActive, &_agricultural-notActive, &_moto-notActive  
             display: none
 
     &__parameters-btm
