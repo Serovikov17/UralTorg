@@ -1,5 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // Click on the menu and footer links
+    const menuLink = document.querySelectorAll('.menu__link'),
+          footRefLink = document.querySelectorAll('.footer__references-link');
+    // Main menu
+    menuLink[0].addEventListener('click', () => {
+        location.reload();
+    })
+    // Main footer
+    footRefLink[0].addEventListener('click', () => {
+        location.reload();
+    })
 
+    // Working with categories, choosing tires or wheels
     const categoriesItems = document.querySelector('.categories__items'),
 
           passenger = document.querySelector('#passenger'),
@@ -50,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         itemMoto.classList.add('active');
     })
 
+    // Go to the filter and the tire / disk catalog
     const promo = document.querySelector('.promo'),
           categories = document.querySelector('.categories'),
           catalog = document.querySelector('.catalog'),
@@ -84,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
           diskMoto = document.querySelector('.diskMoto'),
           carsMoto = document.querySelector('.carsMoto');
     
+    // Selection of tires / wheels
     function closeMainClickTire () {
         promo.classList.add('notActive');
         categories.classList.add('notActive');
@@ -175,9 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
         diskMoto.classList.remove('catalog__parameters-disk_moto-notActive');
     })
 
-
-    
-
+    // Selection by car
     catalogTab[2].addEventListener('click', () => {
         if (!(catParPassenger.classList.contains('notActive'))) {
             closeTireDiskClickCars ();
