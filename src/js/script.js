@@ -222,4 +222,12 @@ document.addEventListener("DOMContentLoaded", () => {
             carsMoto.classList.remove('catalog__parameters-cars_moto-notActive');
         }
     })
+
+    // Window overlay
+    const overlay = document.querySelector('.overlay'),
+          overClose = document.querySelector('.overlay__close');
+
+    overClose.addEventListener('click', () => {
+        overlay.classList.add('notActive');
+    })
 });
