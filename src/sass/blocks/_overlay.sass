@@ -58,25 +58,27 @@
                 align-items: center
                 justify-content: space-between
                 text-align: center
+                
             &-img
-
                 img 
                     height: 35px
-            &-warehouse
+            &-warehouse, &-availability, &-price, &-quantity              
                 height: 60px
-
-                
-            &-availability
-                
-                
-            &-price
-                
+                display: grid
+                grid-template: 25px 30px / minmax(120px, 300px)
+                grid-row-gap: 5px
+                h3
+                    margin: 0
             &-quantity
+                grid-row-gap: 2px
                 input
+                    margin: 0 auto
+                    height: 30px
                     width: 50px
                     text-align: center
             &-basket
                 button
+                    margin-right: 5px
                     background-color: $main-color
                     color: #fff
     

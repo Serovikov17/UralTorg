@@ -13,6 +13,10 @@
 </head>
 <body>
 
+	<?php
+        include ('php/uploading_data_tires.php');
+    ?>
+
     <div class="menu">
         <div class="container">
             <nav>
@@ -1119,31 +1123,7 @@
                 <div class="catalog__items">
                     <a class="catalog__item-passenger">
                         <img src="img/tire/passenger/Aqua_Race_Plus.jpg" alt="" class="catalog__item-img">
-                        <span class="catalog__item-model">Profil Aqua Race Plus 235/55 R17 99W</span>
-                        <div class="catalog__item-price">
-                            от
-                            <span>3800</span>
-                        </div>
-                    </a>
-                    <a class="catalog__item-passenger">
-                        <img src="img/tire/passenger/Aqua_Race_Plus.jpg" alt="" class="catalog__item-img">
-                        <span class="catalog__item-model">Profil Aqua Race Plus 235/55 R17 99W</span>
-                        <div class="catalog__item-price">
-                            от
-                            <span >3800</span>
-                        </div>
-                    </a>
-                    <a class="catalog__item-passenger">
-                        <img src="img/tire/passenger/shiny_belshina_195_60_15_h_88_bel_281.jpg" alt="" class="catalog__item-img">
-                        <span class="catalog__item-model">Profil Aqua Race Plus 235/55 R17 99W</span>
-                        <div class="catalog__item-price">
-                            от
-                            <span>3800</span>
-                        </div>
-                    </a>
-                    <a class="catalog__item-passenger">
-                        <img src="img/tire/passenger/Aqua_Race_Plus.jpg" alt="" class="catalog__item-img">
-                        <span class="catalog__item-model">Profil Aqua Race Plus 235/55 R17 99W</span>
+                        <span class="catalog__item-model"><?php echo $nameTires ?></span>
                         <div class="catalog__item-price">
                             от
                             <span>3800</span>
@@ -1156,7 +1136,7 @@
         </div>
     </section> 
 
-    <section class="overlay">
+    <section class="overlay notActive">
         <div class="container">                
             <div class="overlay__tire">
                 <div class="overlay__tire-specifications">

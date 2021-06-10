@@ -230,4 +230,16 @@ document.addEventListener("DOMContentLoaded", () => {
     overClose.addEventListener('click', () => {
         overlay.classList.add('notActive');
     })
+
+    // клонирование тегов блоков под резину
+    const cat_itms = document.querySelector('.catalog__items'),
+          cat_itms_pas = document.querySelector('.catalog__item-passenger');
+
+    
+    
+    for (let i = 0; i < 5; i++){
+        let clone = cat_itms_pas.cloneNode(true);
+        cat_itms.appendChild(clone);
+    }
+       
 });
