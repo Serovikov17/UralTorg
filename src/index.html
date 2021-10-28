@@ -8,23 +8,20 @@
     <meta name="title" content="УралТорг">
     <meta name="description" content="Здесь вы сможете подобрать диски или резину на ваш автомобиль или сепц транспорт">
 
-
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
 
-	<?php
-        include ('php/uploading_data_tires.php');
-    ?>
+	
 
     <div class="menu">
         <div class="container">
             <nav>
                 <ul class="menu__list">
                     <li class="menu__link"><a href="#">Главная</a></li>
-                    <li class="menu__link"><a href="#">Категории</a></li>
+                    <li class="menu__link"><a href="#categories">Категории</a></li>
                     <li class="menu__link"><a href="#">О нас</a></li>
-                    <li class="menu__link"><a href="#">Контакты</a></li>
+                    <li class="menu__link"><a href="#">Корзина</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,7 +38,7 @@
                 </div> 
             </div>
             <div class="promo__img">
-                <img src="../img/tires.jpg" alt="promo img">
+                <img src="img/tires.jpg" alt="promo img">
             </div>            
         </div>
     </section>
@@ -91,13 +88,13 @@
             
             <div class="categories__items-choice">
                 <div class="categories__item-passenger">
-                    <div class="categories__item categories__item_passenger">
+                    <div id="cattirepas" class="categories__item categories__item_passenger">
                         <img src="icons/categories/tires.svg" alt="passenger car">
                         <div class="categories__item-text">
                             Шины
                         </div>
                     </div>
-                    <div class="categories__item categories__item_passenger">
+                    <div id="catdiskpas"class="categories__item categories__item_passenger">
                         <img src="icons/categories/disks.svg" alt="passenger car">
                         <div class="categories__item-text">
                             Диски
@@ -106,13 +103,13 @@
                 </div>
 
                 <div class="categories__item-cargo">
-                    <div class="categories__item categories__item_cargo">
+                    <div id="cattirecargo" class="categories__item categories__item_cargo">
                         <img src="icons/categories/tires-cargo.svg" alt="cargo truck">
                         <div class="categories__item-text">
                             Шины
                         </div>
                     </div>
-                    <div class="categories__item categories__item_cargo">
+                    <div id="catdiskcargo" class="categories__item categories__item_cargo">
                         <img src="icons/categories/disks-cargo.svg" alt="cargo truck">
                         <div class="categories__item-text">
                             Диски
@@ -121,13 +118,13 @@
                 </div>
 
                 <div class="categories__item-special">
-                    <div class="categories__item categories__item_special">
+                    <div id="cattirespec" class="categories__item categories__item_special">
                         <img src="icons/categories/tires-special.svg" alt="special equipment">
                         <div class="categories__item-text">
                             Шины
                         </div>
                     </div>
-                    <div class="categories__item categories__item_special">
+                    <div id="catdiskspec" class="categories__item categories__item_special">
                         <img src="icons/categories/disks-special.svg" alt="special equipment">
                         <div class="categories__item-text">
                             Диски
@@ -136,13 +133,13 @@
                 </div>
 
                 <div class="categories__item-agricultural">
-                    <div class="categories__item categories__item_agricultural">
+                    <div id="cattireagri" class="categories__item categories__item_agricultural">
                         <img src="icons/categories/tires-agricultural.svg" alt="agricultural machinery">
                         <div class="categories__item-text">
                             Шины
                         </div>
                     </div>
-                    <div class="categories__item categories__item_agricultural">
+                    <div id="catdiskagri" class="categories__item categories__item_agricultural">
                         <img src="icons/categories/disks-agricultural.svg" alt="agricultural machinery">
                         <div class="categories__item-text">
                             Диски
@@ -151,13 +148,13 @@
                 </div>
 
                 <div class="categories__item-moto">
-                    <div class="categories__item categories__item_moto">
+                    <div id="cattiremoto" class="categories__item categories__item_moto">
                         <img src="icons/categories/tires-moto.svg" alt="moto">
                         <div class="categories__item-text">
                             Шины
                         </div>
                     </div>
-                    <div class="categories__item categories__item_moto">
+                    <div id="catdiskmoto" class="categories__item categories__item_moto">
                         <img src="icons/categories/disks.svg" alt="moto">
                         <div class="categories__item-text">
                             Диски
@@ -189,7 +186,7 @@
                     <ul class="catalog__tabs">
                         <li class="catalog__tab tireDisk notActive"><div>Шины</div></li>
                         <li class="catalog__tab tireDisk notActive"><div>Диски</div></li>
-                        <li class="catalog__tab "><div>По автомобилю</div></li>
+                        <li class="catalog__tab selectByCar"><div>По автомобилю</div></li>
                     </ul>
 
                     <div class="catalog__parameters">
@@ -197,26 +194,26 @@
                         <div class="catalog__parameters-passenger notActive">
                             <div class="catalog__parameters-tire catalog__parameters-tire_passenger-notActive tirePassenger">
                                 <div class="catalog__parameters-tire catalog__parameters-tire_sizes">
-                                    <label for="width">Ширина</label>
-                                    <select name="width"> 
-                                        <option value="value0" selected></option>
-                                        <option value="value1">Все</option>
-                                        <option value="value2" >6.50</option>
-                                        <option value="value3">7</option>
+                                    <label  for="width">Ширина</label>
+                                    <select class="passengerTireWidth" name="width"> 
+                                        <option value=""></option>
+                                        <option value="Все" >Все</option>
+                                        <option value="185" >185</option>
+                                        <option value="205">205</option>
                                     </select>
                                     <label for="profile">Профиль</label>
-                                    <select name="profile"> 
-                                        <option value="value0"></option>
-                                        <option value="value1" selected>Все</option>
-                                        <option value="value2" >65</option>
-                                        <option value="value3">75</option>
+                                    <select class="passengerTireHeight" name="height"> 
+                                        <option value=""></option>
+                                        <option value="Все">Все</option>
+                                        <option value="65" >65</option>
+                                        <option value="75">75</option>
                                     </select>
                                     <label for="diameter">Диаметр</label>
-                                    <select name="diameter"> 
-                                        <option value="value0"></option>
-                                        <option value="value1">Все</option>
-                                        <option value="value2" selected>15</option>
-                                        <option value="value3">16</option>
+                                    <select class="passengerTireDiameter" name="diameter"> 
+                                        <option value=""></option>
+                                        <option value="Все">Все</option>
+                                        <option value="R15">15</option>
+                                        <option value="R16">16</option>
                                     </select>
                                 </div>
                                 
@@ -240,28 +237,29 @@
         
                                 <div class="catalog__parameters-tire catalog__parameters-tire_seasonality">
                                     <label for="seasonality">Сезонность</label>
-                                    <select name="seasonality">
-                                        <option value="value0" selected></option>
-                                        <option value="value1">Зима</option>
-                                        <option value="value2" >Лето</option>
+                                    <select class="passengerTireSeason" name="seasonality">
+                                        <option value=""></option>
+                                        <option value="Зимняя">Зима</option>
+                                        <option value="Летняя" >Лето</option>
+                                        <option value="Всесезонная">Всесезон</option>
                                     </select>
                                 </div>
         
                                 <div class="catalog__parameters-tire catalog__parameters-tire_spike">
                                     <label for="spike">Шип</label>
-                                    <select name="spike"> 
-                                        <option value="value0"selected></option>
-                                        <option value="value1">Да</option>
-                                        <option value="value2">Нет</option>
+                                    <select class="passengerTireIs_studded" name="spike"> 
+                                        <option value=""></option>
+                                        <option value="шип">Да</option>
+                                        <option value="не шип">Нет</option>
                                     </select>
                                 </div>
         
                                 <div class="catalog__parameters-tire catalog__parameters-tire_manufacturer">
                                     <label for="manufacturer">Производитель</label>
-                                    <select name="manufacturer"> 
-                                        <option value="value0"selected></option>
-                                        <option value="value1">viatty</option>
-                                        <option value="value2">Toyo</option>
+                                    <select class="passengerTireBrand" name="manufacturer"> 
+                                        <option value=""></option>
+                                        <option value="Viatty">viatty</option>
+                                        <option value="Yokohama">Yokohama</option>
                                     </select>
                                 </div>
                             </div>
@@ -366,24 +364,24 @@
                             <div class="catalog__parameters-tire catalog__parameters-tire_cargo-notActive tireCargo">
                                 <div class="catalog__parameters-tire catalog__parameters-tire_sizes">
                                     <label for="width">Ширина</label>
-                                    <select name="width"> 
-                                        <option value="value0" selected></option>
-                                        <option value="value1">Все</option>
-                                        <option value="value2" >6.50</option>
+                                    <select class="cargoTireWidth" name="width"> 
+                                        <option value=""></option>
+                                        <option value="Все">Все</option>
+                                        <option value="315" >315</option>
                                         <option value="value3">7</option>
                                     </select>
                                     <label for="profile">Профиль</label>
-                                    <select name="profile"> 
-                                        <option value="value0"></option>
-                                        <option value="value1" selected>Все</option>
-                                        <option value="value2" >65</option>
+                                    <select class="cargoTireHeight" name="height"> 
+                                        <option value=""></option>
+                                        <option value="Все">Все</option>
+                                        <option value="80">80</option>
                                         <option value="value3">75</option>
                                     </select>
                                     <label for="diameter">Диаметр</label>
-                                    <select name="diameter"> 
-                                        <option value="value0"></option>
-                                        <option value="value1">Все</option>
-                                        <option value="value2" selected>15</option>
+                                    <select class="cargoTireDiameter" name="diameter"> 
+                                        <option value=""></option>
+                                        <option value="Все">Все</option>
+                                        <option value="value2">15</option>
                                         <option value="value3">16</option>
                                     </select>
                                 </div>
@@ -408,8 +406,8 @@
         
                                 <div class="catalog__parameters-tire catalog__parameters-tire_seasonality">
                                     <label for="seasonality">Сезонность</label>
-                                    <select name="seasonality">
-                                        <option value="value0" selected></option>
+                                    <select class="cargoTireSeason" name="seasonality">
+                                        <option value=""></option>
                                         <option value="value1">Зима</option>
                                         <option value="value2" >Лето</option>
                                     </select>
@@ -417,8 +415,8 @@
         
                                 <div class="catalog__parameters-tire catalog__parameters-tire_spike">
                                     <label for="spike">Шип</label>
-                                    <select name="spike"> 
-                                        <option value="value0"selected></option>
+                                    <select class="cargoTireIs_studded" name="spike"> 
+                                        <option value=""></option>
                                         <option value="value1">Да</option>
                                         <option value="value2">Нет</option>
                                     </select>
@@ -426,8 +424,8 @@
         
                                 <div class="catalog__parameters-tire catalog__parameters-tire_manufacturer">
                                     <label for="manufacturer">Производитель</label>
-                                    <select name="manufacturer"> 
-                                        <option value="value0"selected></option>
+                                    <select class="cargoTireBrand" name="manufacturer"> 
+                                        <option value=""></option>
                                         <option value="value1">viatty</option>
                                         <option value="value2">Toyo</option>
                                     </select>
@@ -1120,15 +1118,16 @@
                     </div>
                 </div>
 
-                <div class="catalog__items">
-                    <a class="catalog__item-passenger">
-                        <img src="img/tire/passenger/Aqua_Race_Plus.jpg" alt="" class="catalog__item-img">
-                        <span class="catalog__item-model"><?php echo $nameTires ?></span>
-                        <div class="catalog__item-price">
-                            от
-                            <span>3800</span>
-                        </div>
-                    </a>
+                <class class="catalog__items">
+                        <!-- <a class="catalog__items-item-product" id="pas1">
+                            <img src="img/tire/passenger/Aqua_Race_Plus.jpg" alt="" class="catalog__items-item-product-img">
+                            <span class="catalog__items-item-product-model"></span>
+                            <div class="catalog__items-item-product-price">
+                                от
+                                <span>цена</span>
+                            </div>
+                        </a>  -->
+                     
                 </div>
 
             </div>
@@ -1138,10 +1137,10 @@
 
     <section class="overlay notActive">
         <div class="container">                
-            <div class="overlay__tire">
+            <div class="overlay__tire overNotActive">
                 <div class="overlay__tire-specifications">
-                    <img src="img/tire/passenger/Aqua_Race_Plus.jpg" alt="" class="overlay__tire-specifications-img">
-                    <h2 class="overlay__tire-specifications-title">Легковая шина Profil Prosport 215/55 R16 93V</h2> 
+                    <!-- <img src="img/tire/passenger/Aqua_Race_Plus.jpg" alt="" class="overlay__tire-specifications-img">
+                    <h2 class="overlay__tire-specifications-title">Легковая шина <span>Prosport 215/55 R16 93V</span></h2> 
                     <ul class="overlay__tire-specifications-parameters">
                         <li class="">Наименование: <span>Profil Prosport</span></li>
                         <li class="">Технология: <span></span></li>
@@ -1152,7 +1151,7 @@
                         <li class="">Сезон: <span>лето</span></li>
                         <li class="">Наличие шипов: <span>нет</span></li>
                         <li class="">Индекс скорости: <span>V</span></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="overlay__divider divider">&nbsp;</div> 
 
@@ -1160,15 +1159,15 @@
                     <h2 class="overlay__tire-description-title">Описание</h2>
                     <div class="overlay__tire-description-text">
                         <span >
-                            Летние шины Profil для легковых автомобилей, подходит для активного, спортивного стиля вождения. Имеет асимметричный рисунок протектора, который обеспечивает надежность в управлении как на сухой, так и на мокрой дороге.
-                            Преимeуществом шины является безупречная защита от аквапланирования, обеспеченная за счет водоотводящих каналов, сконцентрированных на внешней стороне протектора, которые отводят воду из места контакта максимально быстро. Шина отличается высоким уровнем комфорта и стойкостью к износу. Низкое сопротивление качению, комфортная и тихая езда. Ребристый рисунок протектора обеспечивает превосходные показатели торможения, а также точную реакцию на рулевое управление и надёжную курсовую устойчивость.
+                            Подробное описание шины есть на сайте производителя <a href="#">sait</a>.
                         </span> 
                     </div>
                 </div>
                 <div class="overlay__divider divider">&nbsp;</div>
 
                 <div class="overlay__tire-acquisition">
-                    <div class="overlay__tire-acquisition-background">
+                    <h3 class="overlay__tire-acquisition-title">Товара нет в наличии</h3>
+                <!--     <div class="overlay__tire-acquisition-background">
                         <div class="overlay__tire-acquisition-img">
                             <img src="icons/categories/tires.svg" alt="">
                         </div>
@@ -1189,10 +1188,10 @@
                             <input type="number" value="1" min="1">
                         </div>
                         <div class="overlay__tire-acquisition-basket">
-                            <button>Добавить в корзину</button>
+                            <button class="btn">Добавить в корзину</button>
                         </div>
-                    </div>
-                    <div class="overlay__tire-acquisition-background">
+                    </div> -->
+                    <!-- <div class="overlay__tire-acquisition-background">
                         <div class="overlay__tire-acquisition-img">
                             <img src="icons/categories/tires.svg" alt="">
                         </div>
@@ -1213,9 +1212,10 @@
                             <input type="number" value="1" min="1">
                         </div>
                         <div class="overlay__tire-acquisition-basket">
-                            <button>Добавить в корзину</button>
+                            <button class="btn">Добавить в корзину</button>
                         </div>
-                    </div>  
+                    </div>  -->
+                     
                              
                 </div>
                 <div class="overlay__divider divider">&nbsp;</div>
@@ -1225,6 +1225,137 @@
                 
             </div>
             
+            <div class="overlay__infoCont overNotActive">
+                <div class="overlay__infoCont-info">
+                    <div class="overlay__infoCont-info-company">
+                        <h3>Компания:</h3>
+                        <p>ООО "Уралторг"</p>
+                        <p>
+                            ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "УРАЛТОРГ"<br>
+                            Директор — Трошев Илья Анатольевич<br>
+                            ОГРН — 1145958015928<br>
+                            ИНН — 5904995616<br>
+                            КПП — 590401001<br>
+                            Юридический адрес — 614025, Пермский край, г Пермь,<br> ул Героев Хасана, д 74 корпус А<br>
+                            Расчетный счет — 40702810249770011103<br>
+                            Название банка — Волго-Вятский банк ПАО СБЕРБАНК<br>
+                            БИК — 042202603<br>
+                            Корреспондентский счет банка — 30101810900000000603<br>
+                        </p>
+                    </div>
+                    
+                </div>
+                
+                <div class="overlay__infoCont-contacts">
+                    <div class="overlay__infoCont-contacts-contactPerson">
+                        <h3>Контактные лица:</h3>
+                        <p>Трошев Илья Анатольевич</p>
+                        <p>Пухачев Роман Николаевич</p>
+                    </div>
+                    <div class="overlay__infoCont-contacts-phone">
+                        <h3>Телефон / Факс</h3>
+                        <p>
+                            <a href="tel:83422076190">+7 (342) 207-61-90</a> /
+                            <a href="fax:+73422076199">+7 (342) 207-61-99</a>
+                        </p>
+                    </div>
+                    <div class="overlay__infoCont-contacts-email">
+                        <h3>Электронный адрес:</h3>
+                        <p>
+                            <a href="mailto:uraltorg-pt@mail.ru">Uraltorg-PT@mail.ru</a>
+                        </p>
+                    </div>
+                    <div class="overlay__infoCont-contacts-address">
+                        <h3>Фактический адрес:</h3>
+                        <p>614066, г Пермь, ул. Рязанская, д 105 корпус 1, офис 9</p>
+                    </div>
+                    
+                </div>
+
+                <div class="overlay__infoCont-divider divider"></div>
+
+                <div class="overlay__infoCont-address">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1058.072356274148!2d56.17610252013999!3d57.968445194969014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e8bf4e1f645fdf%3A0x2fcffcea55ca1e16!2z0YPQuy4g0KDRj9C30LDQvdGB0LrQsNGPLCAxMDUg0LrQvtGA0L_Rg9GBIDEsINCf0LXRgNC80YwsINCf0LXRgNC80YHQutC40Lkg0LrRgNCw0LksIDYxNDAzNg!5e0!3m2!1sru!2sru!4v1623952048742!5m2!1sru!2sru" allowfullscreen="" loading="lazy"></iframe>                    
+                </div>
+
+            </div>
+
+            <div class="overlay__basket overNotActive">
+                <div class="overlay__basket-products">
+                    <div class="overlay__basket-products-item">
+                        <img class="overlay__basket-products-item-img" src="icons/categories/tires.svg" alt="">
+                        <span class="overlay__basket-products-item-name">Toyo observ 176/50</span>
+                        <span class="overlay__basket-products-item-price">3500<span> руб/шт</span></span>
+                        <span class="overlay__basket-products-item-number">4</span>
+                        <span class="overlay__basket-products-item-amount">14000</span>
+                        <button class="overlay__basket-products-item-delete btn">Удалить</button>
+                    </div>
+                    <div class="overlay__basket-products-item">
+                        <img class="overlay__basket-products-item-img" src="icons/categories/tires.svg" alt="">
+                        <span class="overlay__basket-products-item-name">YНаименование продуктармрпмпррпрсппапраа ропрппроппо</span>
+                        <span class="overlay__basket-products-item-price">Цена за штуку</span>
+                        <span class="overlay__basket-products-item-number">колличество</span>
+                        <span class="overlay__basket-products-item-amount">сумма</span>
+                        <button class="overlay__basket-products-item-delete btn">Отм</button>
+                    </div>
+                    
+                </div>
+
+                <div class="overlay__basket-buyer">
+                    <form class="overlay__basket-buyer-form"  action="" method="POST">
+                        <div class="overlay__basket-buyer-form-payment">
+                            <span>Способ оплаты</span>
+                            <select name="payment"> 
+                                <option value="value0" selected>Выберите способ оплаты</option>
+                                <option value="value1" >Наличные</option>
+                                <option value="value2" >Безналичный расчет</option>
+                            </select>
+                        </div>
+                        
+                        <div class="overlay__basket-buyer-form-delivery">
+                            <span>Способ доставки</span>
+                            <select name="payment"> 
+                                <option value="value0" selected>Выберите способ доставки</option>
+                                <option value="value1" >Доставка транспортной компанией</option>
+                                <option value="value2" >Самовывоз</option>
+                            </select>
+                            <input class="overlay__basket-buyer-form-delivery-address" type="text" placeholder="Укажите адрес для досавки товара">
+                        </div>
+
+                        <div class="overlay__basket-buyer-form-buyerInfo">
+                            <div class="overlay__basket-buyer-form-buyerInfo-buyer">
+                                <span>Информация о покупателе</span>
+                                <input class="overlay__basket-buyer-form-buyerInfo-buyer-name" type="text"  placeholder="Ваше имя">
+                                <input class="overlay__basket-buyer-form-buyerInfo-buyer-surname"type="text" placeholder="Ваша фамилия">
+                            </div>
+                            <div class="overlay__basket-buyer-form-buyerInfo-info">
+                                <span>Ваш телефон</span>
+                                <input class="overlay__basket-buyer-form-buyerInfo-info-phone" type="text" placeholder="" value="+7">
+                                <input class="overlay__basket-buyer-form-buyerInfo-info-email" type="text" placeholder="Email" >
+                            </div>
+                            
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="overlay__basket-confirmation">
+                    <div class="overlay__basket-confirmation-btn">
+                        <button class="btn">Оформить заказ</button>
+                    </div>
+                    <div class="overlay__basket-confirmation-approval">
+                        <input type="checkbox">
+                        <span href="#">Согласие на обработку ваших персональных данных. Вы ознакомились и согласны с <a href="#">политикой конфиденциальности</a>, <a href="#">политикой в отношении обработки персональнвых данных</a>.</span>
+                    </div>              
+                   
+                </div>
+            </div>
+            
+            <div class="overlay__notification overNotActive">
+                    <span>Спасибо, что выбрали "УралТорг"</span>
+                    <span>В ближайщее врмя с вами свяжется менеджер для подтверждения заказа.</span>
+            </div>
+
             <div class="overlay__close">
                 <svg height="329pt" viewBox="0 0 329.26933 329" width="329pt" xmlns="http://www.w3.org/2000/svg">
                     <path d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0"/>
@@ -1245,13 +1376,13 @@
                 </div>
                 <div class="footer__references">
                     <a href="#" class="footer__references-link">На главную</a>
-                    <a href="#" class="footer__references-link">Категории</a>
+                    <a href="#categories" class="footer__references-link">Категории</a>
                     <a href="#" class="footer__references-link">О нас</a>
                 </div>
                 <div class="footer__contacts">
                     <a href="tel:+74999228974" class="footer__phone">+7 (499) 922-89-74</a>
-                    <a href="" class="footer__email">uraltorg-pt@mail.ru</a>
-                    <a href="" class="footer__address">Пермь, ул.Рязанская, 105, корп. 1, (офис 9, этаж 2)</a>
+                    <a href="mailto:uraltorg-pt@mail.ru" class="footer__email">uraltorg-pt@mail.ru</a>
+                    <a href="https://www.google.ru/maps/place/ул.+Рязанская,+105+корпус+1,+Пермь,+Пермский+край,+614036/@57.968888,56.1749543,17z/data=!3m1!4b1!4m5!3m4!1s0x43e8bf4e1f645fdf:0x2fcffcea55ca1e16!8m2!3d57.968888!4d56.177143?hl=ru" class="footer__address">Пермь, ул.Рязанская, 105, корп. 1, (офис 9, этаж 2)</a>
                 </div>
             </div>
         </div>
@@ -1259,6 +1390,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>

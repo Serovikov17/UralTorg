@@ -117,33 +117,36 @@
         justify-content: space-between
 
     &__items
-        padding: 8px 
         border: 2px solid $secondary-color
+        padding: 8px 
         min-height: 650px
         display: grid
         grid-template: repeat(2, 280px)/ repeat(4, 216px)
         grid-auto-rows: minmax(270px, auto)
         grid-column-gap: 8px
-        grid-row-gap: 8px
-    &__item-passenger
-        display: grid
-        grid-template: px 30px 20px / 175px
-        border: 1px solid $secondary-color
-        padding: 10px
-        text-align: left
-        line-height: 20px
-        font-weight: 400
-        font-size: 18px
-    &__item-img
-        width: 180px
-        height: 180px
-    &__item-model
-        color: $main-color
-    &__item-price
-        color: $main-color
-        span
-            font-size: 20px
-            color: red
+        grid-row-gap: 8px    
+        &-product
+            display: grid
+            grid-template: 185px 54px 22px / auto
+            border: 1px solid $secondary-color
+            padding: 5px
+            text-align: left
+            line-height: 18px
+            font-weight: 500
+            font-size: 16px
+            &-img
+                width: 180px
+                height: 180px
+            &-model
+                color: $main-color
+            &-price
+                color: $main-color
+                span
+                    font-size: 20px
+                    color: red
+    
+    .catalogNotActive
+        display: none
 
         
 

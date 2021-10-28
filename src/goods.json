@@ -1,0 +1,36 @@
+{
+    "1": {
+        "cae": "2504900",
+        "name": "265/70R16 112T Ice Zero TL (шип.)",
+        "width": "265.00",
+        "height": "70.00",
+        "diameter": "R16.00",
+        "diameter_out": "R0.00",
+        "load_index": "112",
+        "speed_index": "T",
+        "model": "Ice Zero",
+        "brand": "Pirelli",
+        "season": "Зимняя",
+        "is_studded": "шип",
+        "tiretype": "Легковая",
+        "runflat": "",
+        "reinforced": ""
+    },
+    "2": {
+        "cae": "PXR0033103",
+        "name": "245/40R17 91S Blizzak VRX TL",
+        "width": "245.00",
+        "height": "40.00",
+        "diameter": "R17.00",
+        "diameter_out": "R0.00",
+        "load_index": "91",
+        "speed_index": "S",
+        "model": "Blizzak VRX",
+        "brand": "Bridgestone",
+        "season": "Зимняя",
+        "is_studded": "шип",
+        "tiretype": "Легковая",
+        "runflat": "",
+        "reinforced": ""
+    }
+}
