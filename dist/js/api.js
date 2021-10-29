@@ -39,11 +39,13 @@ let typeTire = '';
 let cattire = '';
 function selectACategoryTire(data) {
   let arrTire0 = data;
+  
   $('#cattirepas').on('click', () => {
     arrTire = arrTire0;
     typeTire = 'Легковая';
     arrTire = arrTire.filter(t => t.tiretype == typeTire);
     cattire = 'passenger';
+    
     createACatalog(arrTire, cattire); 
   });
   
@@ -52,7 +54,8 @@ function selectACategoryTire(data) {
     typeTire = 'Грузовая';
     arrTire = arrTire.filter(t => t.tiretype == typeTire);
     cattire = 'cargo';
-    filterTire(arrTire, cattire);
+    
+    createACatalog(arrTire, cattire);
   });
 
   $('#cattirespec').on('click', () => {
@@ -60,7 +63,8 @@ function selectACategoryTire(data) {
     typeTire = 'Спецшина';
     arrTire = arrTire.filter(t => t.tiretype == typeTire);
     cattire = 'special';
-    filterTire(arrTire, cattire);
+    
+    createACatalog(arrTire, cattire);
   });
 
   $('#cattireagri').on('click', () => {
@@ -68,7 +72,8 @@ function selectACategoryTire(data) {
     typeTire = 'Сельхозшина';
     arrTire = arrTire.filter(t => t.tiretype == typeTire);
     cattire = 'agricultural';
-    filterTire(arrTire, cattire);
+    
+    createACatalog(arrTire, cattire);
   });
 
   $('#forestTire').on('click', () => {
@@ -76,7 +81,8 @@ function selectACategoryTire(data) {
     typeTire = 'Леснаяшина';
     arrTire = arrTire.filter(t => t.tiretype == typeTire);
     cattire = 'forest';
-    filterTire(arrTire, cattire);
+    
+    createACatalog(arrTire, cattire);
   });
   
   $('#cattiremoto').on('click', () => { 
@@ -84,7 +90,8 @@ function selectACategoryTire(data) {
     typeTire = 'Мотошина';
     arrTire = arrTire.filter(t => t.tiretype == typeTire);
     cattire = 'moto';
-    filterTire(arrTire, cattire); 
+    
+    createACatalog(arrTire, cattire);
   });
 }
 
@@ -96,19 +103,20 @@ function createACatalog(data, nameCat) {
   
   filterTire(arrTire, nameCat);
   let arrTire1 = arrTire;  
-  
+
   scr = document.documentElement.scrollTop = 0;
   createAСard(arrTire, end);
   
   window.onscroll = function() {
-    if  ($(window).scrollTop() >= $('.catalog__items').height() - $(window).height())  
-     {
+    if  ($(window).scrollTop() >= $('.catalog__items').height() - $(window).height()) {
       arrTire = arrTire1;
       end = end + 52;
+      
       createAСard(arrTire, end);
+      
       $('.catalog__items-product').on('click', function(event){
         event.preventDefault(); // выключaем стaндaртную рoль элементa
-        let prodId = this.id; 
+        let prodId = this.id;
         createAСardTire (data, nameCat, prodId);        
       });
      }
@@ -183,6 +191,7 @@ function filterTire(data, nameCat) {
 function createAСard (data, end) {
   arrTire = data;
   arrTire = arrTire.slice(0 , end);
+  
   $('.catalog__items').html(arrTire.map(key => 
     `<a class="catalog__items-product" id=${key.id}>
       <img src="img/tire/passenger/Aqua_Race_Plus.jpg" alt="" class="catalog__items-product-img">
@@ -192,7 +201,8 @@ function createAСard (data, end) {
         <span>${key.price}</span>
       </div>
     </a>`
-  ));   
+    )    
+  );   
 }
 
 // Подгрузка склады
@@ -200,17 +210,16 @@ function selectionTireWarehouse(uploadTire) {
   return uploadTire;
 }
 
-
 function createAСardTire (data, nameCat, prodId) {
   arrTire = data;
 
   // Вывод катеригерии на руском 
   let arrCatTire = [{type:'passenger', name: 'Легковая'},
-                {type:'cargo', name: 'Грузовая'},
-                {type:'special', name: 'Спец'},
-                {type:'agricultural', name: 'Сельхоз'},
-                {type:'forest', name: 'Лесная'},
-                {type:'moto', name: 'Мото'}];
+                    {type:'cargo', name: 'Грузовая'},
+                    {type:'special', name: 'Спец'},
+                    {type:'agricultural', name: 'Сельхоз'},
+                    {type:'forest', name: 'Лесная'},
+                    {type:'moto', name: 'Мото'}];
   
   let catTire = arrCatTire.find(item => item.type == nameCat);
   catTire = catTire.name;
@@ -245,11 +254,8 @@ function createAСardTire (data, nameCat, prodId) {
   let upTire = selectionTireWarehouse(uploadTire);
   let warehouses = upTire.find(item => item.cae == objTire.cae);
   
-
-
   //Проверка наличия на складах
   if (warehouses != undefined) {
-    /* $('.overlay__tire-acquisition-title').css({display: 'none'}); */
     $('.overlay__tire-acquisition-title').hide();
   } else {
     $('.overlay__tire-acquisition-title').show();
@@ -260,8 +266,7 @@ function createAСardTire (data, nameCat, prodId) {
       delete warehouses[key]; 
     }
   }
-  
-  
+    
   //Вывод имени склада и передача в тег "overlay__tire-acquisition"
   let warehousesName = {
     rest_SKLAD12: "Склад 12",
@@ -275,15 +280,14 @@ function createAСardTire (data, nameCat, prodId) {
     rest_sk10: "Склад 10",
     rest_tyumen: "Склад Тюмень",
     rest_yamka: "Склад Ямка"
-  }
-  
+  }  
   
   // Вставка параметров склада в окно overlay
   for (let key in warehouses) {
     for (let keyName in warehousesName) {
       if (key == keyName) {
         $('.overlay__tire-acquisition').append( 
-          `<div  class="overlay__tire-acquisition-background">
+          `<div name=${key} class="overlay__tire-acquisition-background">
             <div class="overlay__tire-acquisition-img">
               <img src="icons/categories/tires.svg" alt="">
             </div>
@@ -295,7 +299,7 @@ function createAСardTire (data, nameCat, prodId) {
               <h3>В наличии (шт)</h3>
               <span class="overlay__tire-acquisition-availability-digit">${warehouses[key]}</span>
             </div>
-            <div class="overlay__tire-acquisition-price">
+            <div name=${key} class="overlay__tire-acquisition-price">
               <h3>Цена руб/шт</h3>
               <span class="verlay__tire-acquisition-price-digit">3800</span>
             </div>
@@ -312,26 +316,42 @@ function createAСardTire (data, nameCat, prodId) {
     } 
   }
 
-  
-
-  
-  
   //Передача данных в корзину
   $('.overlay__tire-acquisition-basket').on('click', function(event) {
     let btnNameWarehouses = $(this).attr('name'),
-        quantityTire = $(`.overlay__tire-acquisition-quantity[name=${btnNameWarehouses}] input`).val();
+        quantityTire = $(`.overlay__tire-acquisition-quantity[name=${btnNameWarehouses}] input`).val(),
+        priceTire = $(`.overlay__tire-acquisition-price[name=${btnNameWarehouses}] span`).text();
 
-    basket(objTire.brand, objTire.name, quantityTire, btnNameWarehouses);
+    basket(objTire.brand, objTire.name, quantityTire, priceTire, btnNameWarehouses);
   });
 
 }
 
 // Корзина
-function basket(brand, name, quantity, nameWarehouses) {
+function basket(brand, name, quantity, price, nameWarehouses) {
   console.log(brand);
   console.log(name);
   console.log(quantity);
+  console.log(price);
   console.log(nameWarehouses);
+  
+  // Добавить в корзину товар 
+  $('.overlay__basket-products').append( 
+    `<div name=${nameWarehouses} class="overlay__basket-products-item">
+      <img class="overlay__basket-products-item-img" src="icons/categories/tires.svg" alt="">
+      <span class="overlay__basket-products-item-name">${brand} ${name}</span>
+      <span class="overlay__basket-products-item-price">${price}<span> руб/шт</span></span>
+      <span class="overlay__basket-products-item-number">${quantity}</span>
+      <span class="overlay__basket-products-item-amount">${price * quantity}</span>
+      <button name=${nameWarehouses} class="overlay__basket-products-item-delete btn">Удалить</button>
+    </div>`
+  );
+  
+  // удалить из корзины товар
+  $('.overlay__basket-products-item-delete').on('click', function(event) {
+    let basketProdDel = $(this).attr('name');
+    $(`.overlay__basket-products-item[name=${basketProdDel}]`).remove();
+  });
 }
 
 //
